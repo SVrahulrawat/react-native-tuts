@@ -26,9 +26,7 @@ const Elevated = () => {
   );
 };
 const styles = StyleSheet.create({
-  container: {
-    padding: 8,
-  },
+  container: {},
   headingText: {
     fontSize: 24,
     fontWeight: 'bold',
