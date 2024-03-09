@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 import Snackbar from 'react-native-snackbar';
-// import {Icon} from 'react-native-vector-icons/Icon';
 import Icons from './components/Icons';
 
 function App(): JSX.Element {
@@ -121,12 +120,22 @@ function App(): JSX.Element {
         data={gameState}
         style={styles.grid}
         renderItem={({item, index}) => (
-          <Pressable
-            style={styles.card}
-            key={index}
-            onPress={() => changeItem(index)}>
-            <Icons name={item} />
-          </Pressable>
+          <>
+            {console.log(item)}
+            <Pressable
+              style={styles.card}
+              key={index}
+              onPress={() => changeItem(index)}>
+              {/* on first screen default value will be shown  */}
+              {/* after first click gameState[itemNumber] value change and is set to cross */}
+              {/* at the same time icon is rendered with name = [item -> which is nothing but the
+                  individual value of the array] and that how the icon is rendered 
+                */}
+              <Icons name={item} />
+              <Text>{item}</Text>
+              {/*--->> for better understanding */}
+            </Pressable>
+          </>
         )}
       />
 
